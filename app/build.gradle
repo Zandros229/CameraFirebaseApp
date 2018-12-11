@@ -33,4 +33,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.1'
     implementation 'com.google.firebase:firebase-crash:16.0.1'
+    implementation 'com.afollestad:drag-select-recyclerview:0.3.6'
+    implementation 'com.github.nostra13:Android-Universal-Image-Loader:v1.9.5'
 }

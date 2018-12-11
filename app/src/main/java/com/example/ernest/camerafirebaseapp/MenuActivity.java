@@ -21,8 +21,9 @@ public class MenuActivity extends AppCompatActivity {
         galleryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(MenuActivity.this,/*Set next activity*/ AndroidCameraApi.class);
-                //startActivity(intent);
+                Intent intent = new Intent(MenuActivity.this,/*Set next activity*/ Gallery.class);
+                startActivity(intent);
+                //finish();
             }
         });
 

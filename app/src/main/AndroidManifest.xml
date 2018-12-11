@@ -32,6 +32,10 @@
             android:parentActivityName=".MenuActivity">
 
         </activity>
+        <activity android:name=".Gallery"
+            android:parentActivityName=".MenuActivity">
+
+        </activity>
     </application>
 
 </manifest>
