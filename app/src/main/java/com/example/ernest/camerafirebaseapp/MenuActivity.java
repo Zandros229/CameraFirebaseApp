@@ -32,7 +32,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,/*Set next activity*/ AndroidCameraApi.class);
                 startActivity(intent);
-                finish();
+                //finish();
             }
         });
     }

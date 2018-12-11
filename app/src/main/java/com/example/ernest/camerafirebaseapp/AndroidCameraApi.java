@@ -1,7 +1,6 @@
 package com.example.ernest.camerafirebaseapp;
 
 import android.Manifest;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.ImageFormat;
@@ -34,12 +33,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -51,7 +46,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 public class AndroidCameraApi extends AppCompatActivity {
     FirebaseStorage storage;
@@ -192,7 +186,7 @@ public class AndroidCameraApi extends AppCompatActivity {
             int rotation = getWindowManager().getDefaultDisplay().getRotation();
             captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, ORIENTATIONS.get(rotation));
             Long temp=czas.getTime();
-            final File file = new File(Environment.getExternalStorageDirectory()+"/pic"+temp.toString()+".jpg");
+            final File file = new File(Environment.getExternalStorageDirectory().getPath()+"/DCIM/Camera/pic"+temp.toString()+".jpg");
             ImageReader.OnImageAvailableListener readerListener = new ImageReader.OnImageAvailableListener() {
                 @Override
                 public void onImageAvailable(ImageReader reader) {
@@ -231,7 +225,7 @@ public class AndroidCameraApi extends AppCompatActivity {
                 @Override
                 public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
                     super.onCaptureCompleted(session, request, result);
-                    Toast.makeText(AndroidCameraApi.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AndroidCameraApi.this, "Saved:" + file, Toast.LENGTH_LONG).show();
                     createCameraPreview();
                 }
             };
